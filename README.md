@@ -1,46 +1,157 @@
-# ARP-Attack-and-Network-Sniffing
-# Explore Network Sniffing and ARP Attacks
+# ARP-Attack-and-Network-Sniffing using Ettercap
+
+# Explore Network Sniffing and ARP Attacks using Ettercap
 
 # AIM:
 
-To explore network sniffing and ARP Attacks
+To explore network sniffing and ARP attacks using the Ettercap tool in Kali Linux.
 
-## STEPS:
+---
+
+# STEPS:
+
+## Step 1:
+
+Install Kali Linux either in partition, VirtualBox, VMware, or live mode.
+
+## Step 2:
+
+Investigate the various categories of penetration testing and network analysis tools available in Kali Linux.
+
+## Step 3:
+
+Open the terminal and execute basic Kali Linux commands to verify network connectivity and interface details.
+
+Example commands:
+
+```bash
+ifconfig
+ip a
+ping google.com
+```
+
+---
+
+# ARP Attacks using Ettercap
+
+ARP spoofing is a technique where an attacker sends forged ARP packets to associate the attacker’s MAC address with the IP address of another device on the LAN. This allows interception of network traffic between systems.
+
+---
+
+## Procedure:
 
 ### Step 1:
 
-Install kali linux either in partition or virtual box or in live mode
+Boot both Kali Linux and Windows 7 virtual machines in the same network.
 
 ### Step 2:
 
-Investigate on the various categories of tools as follows:
+In Windows 7, open Command Prompt and execute:
 
+```bash
+arp -a
+```
+
+## OUTPUT:
+
+*(Insert screenshot of ARP table here)*
+
+---
 
 ### Step 3:
-Open terminal and try execute some kali linux commands
 
-## ARP Attacks:  
-ARP spoofing: A hacker sends fake ARP packets that link an attacker's MAC address with an IP of a computer already on the LAN. 
-Boot kali and Windows7 virtual machines.
-In windows 7 give the command arp -a
+In Kali Linux, identify the network interface using:
+
+```bash
+ifconfig
+```
+
+or
+
+```bash
+ip a
+```
+
+---
+
+### Step 4:
+
+Launch Ettercap in graphical mode using the command:
+
+```bash
+sudo ettercap -G
+```
+
 ## OUTPUT:
 
-<img width="1080" height="605" alt="image" src="https://github.com/user-attachments/assets/96d2ddb5-6c25-4943-bc4b-451047d88df7" />
+*(Insert screenshot of Ettercap GUI opening here)*
 
+---
 
+### Step 5:
 
-From kali linux issue the command :
-sudo arpspoof -i eth0 -t <target system> <gateway>
+In Ettercap:
+
+1. Click on **Sniff → Unified Sniffing**
+2. Select the active network interface (example: `eth0` or `wlan0`)
+3. Click **Hosts → Scan for Hosts**
+4. After scanning, click **Hosts → Hosts List**
+5. Select the target system and gateway/router
+6. Click **Add to Target 1** and **Add to Target 2**
+
+---
+
+### Step 6:
+
+Start the ARP spoofing attack by navigating to:
+
+```text
+Mitm → ARP Poisoning
+```
+
+Enable:
+
+```text
+✓ Sniff remote connections
+```
+
+Click **OK**.
+
+---
+
+### Step 7:
+
+Start packet sniffing by clicking:
+
+```text
+Start → Start Sniffing
+```
+
+Ettercap will now begin intercepting packets between the target system and the gateway.
+
 ## OUTPUT:
 
-<img width="964" height="494" alt="Screenshot 2025-09-21 150622" src="https://github.com/user-attachments/assets/8c8c100e-7a7e-4f5e-8c9c-4ff27c36395a" />
+*(Insert screenshot of Ettercap ARP poisoning/sniffing here)*
 
+---
 
-Invoke the wireshark and examine the various menus  and controls of the tool:
+# Wireshark Analysis
 
-<img width="1919" height="1106" alt="Screenshot 2025-09-21 144742" src="https://github.com/user-attachments/assets/5f382e8d-e2f9-4f3a-90cf-f443c85cb68f" />
+Open Wireshark in Kali Linux and capture packets on the same interface.
 
+Observe:
 
+* ARP packets
+* Source and destination MAC addresses
+* TCP/IP traffic
+* Protocol analysis
 
-## RESULT:
-The kali linux tools for ARP Attack and Network Sniffing were identified successfully
+## OUTPUT:
+
+*(Insert screenshot of Wireshark packet capture here)*
+
+---
+
+# RESULT:
+
+The Kali Linux tools for ARP attacks and network sniffing were successfully identified and implemented using Ettercap and Wireshark.
