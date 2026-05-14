@@ -131,9 +131,8 @@ Ettercap will now begin intercepting packets between the target system and the g
 
 ## OUTPUT:
 
-*(Insert screenshot of Ettercap ARP poisoning/sniffing here)*
+<img width="954" height="1055" alt="Screenshot 2026-05-13 095525" src="https://github.com/user-attachments/assets/e8d419e4-e9c9-4eb2-b3e6-7b0a920e6f8a" />
 
----
 
 # Wireshark Analysis
 
@@ -148,7 +147,8 @@ Observe:
 
 ## OUTPUT:
 
-*(Insert screenshot of Wireshark packet capture here)*
+<img width="955" height="1005" alt="Screenshot 2026-05-13 095458" src="https://github.com/user-attachments/assets/54ae8be0-b54d-4898-b7fe-b26ec0ecde75" />
+
 
 ---
 
